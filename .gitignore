@@ -9,12 +9,6 @@ __pycache__
 myvenv/
 venv/
 
-# Base de donnée
-db.sqlite3
-
-# Dossier "static" à la racine du projet
-/blog/static/
-
 # macOS
 ._*
 .DS_Store
