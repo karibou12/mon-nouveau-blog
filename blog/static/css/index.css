@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  height: 100%;
+}
+
+.welcome {
+  position: absolute;
+  width: 100%;
+  height: 800px;
+  background: url("/static/img/boss.jpg") 50% 0 no-repeat;
+  background-size: cover;
+}
+
+.welcome:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #ef9489 0%, #ffcea6 76%);
+  opacity: 0.6;
+  height: 100%;
+  width: auto;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.38);
+}
+header h2 {
+  width: 400px;
+  line-height: 80px;
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
+  text-align: center;
+  font-size: 1.8em;
+}
+
+ul {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  margin-left: 100px;
+  list-style: none;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.title {
+  position: relative;
+  width: max-content;
+  margin-left: 50px;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.title span {
+  color: #ffffff;
+  transition: 0.5s;
+  display: inline-block;
+}
+
+.s1 span {
+  transform-origin: bottom;
+  color: white;
+}
+
+.s2 span {
+  transform-origin: top;
+  transform: translateY(100%) rotateX(-90deg);
+}
+
+.s2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.s2 a {
+  text-decoration: none;
+  color: #cc6d6d;
+}
+
+.title:hover .s1 span {
+  transform: translateY(-100%) rotateX(-90deg);
+}
+
+.title:hover .s2 span {
+  transform: translateY(0%) rotateX(0deg);
+}
+
+.s2 a:hover {
+  color: #cc6d6d;
+}
+
+.welcome-container {
+  height: 300px;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  margin-top: 260px;
+  border: solid 2px whitesmoke;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*# sourceMappingURL=index.css.map */
