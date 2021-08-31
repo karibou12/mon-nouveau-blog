@@ -1,15 +1,66 @@
 {% extends 'blog/base.html' %}
 
+
 {% block content %}
-    {% for post in posts %}
-        <article class="post">
-            <time class="date">
-                {{ post.published_date }}
-            </time>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </article>
-    {% endfor %}
+    <article class="post-container">
+        {% for post in posts %}
+
+            {% if post.published_date %}
+                <div class="post-mini">
+
+                    <div class="container-icons">
+                        {% if user.is_authenticated %}
+
+                            <a class="btn btn-default btn-sm" href="{% url 'post_edit' pk=post.pk %}">
+                                {% include './icons/pencil-fill.svg' %}
+                            </a>
+                            <a class="btn btn-default btn-sm" href="{% url 'post_remove' pk=post.pk %}">
+                                {% include './icons/trash.svg' %}
+                            </a>
+
+                        {% endif %}
+
+
+                        <time class="date">{{ post.published_date }},</time>
+                        <p> par {{ post.author }}</p>
+
+                    </div>
+                    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                    <p>{{ post.summary|linebreaksbr }}</p>
+                    {#                    <p>{{ post.text|linebreaksbr }}</p>#}
+
+                </div>
+
+
+            {% else %}
+                {% if user.is_authenticated %}
+                    <div class="post-mini">
+                        <div class="container-icons">
+                            <a class="btn btn-default btn-sm" href="{% url 'post_publish' pk=post.pk %}">
+                                publish
+                            </a>
+
+                            <a class="btn btn-default btn-sm" href="{% url 'post_edit' pk=post.pk %}">
+                                {% include './icons/pencil-fill.svg' %}
+                            </a>
+
+                            <form method="POST" class="post-form">
+                                <a class="btn btn-default btn-sm" href="{% url 'post_remove' pk=post.pk %}">
+                                    {% include './icons/trash.svg' %}
+                                </a>
+                            </form>
+                        </div>
+                        <h2><a href="{% url 'post_detail' pk=post.pk %}" style="color: red">{{ post.title }}</a></h2>
+                    </div>
+                    {#                         <p>{{ post.text|linebreaksbr }}</p>#}
+                {% endif %}
+
+            {% endif %}
+
+
+
+        {% endfor %}
+    </article>
 {% endblock %}
 
 

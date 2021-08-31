@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>karib's Web Agency</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+
+
+<section class="welcome">
+
+    <header class="page-header">
+
+        <h2>karibou destroyer web agency</h2>
+
+        <ul>
+            <li class="title">
+                <div class="li-container s1">
+                    <span><a>portfolio</a></span>
+                </div>
+                <div class="li-container s2">
+                   <span><a href="https://karibou12.github.io/index.html" target="_blank">portfolio</a></span>
+                </div>
+            </li>
+
+            <li class="title">
+                <div class="li-container s1">
+                    <span><a>blog</a></span>
+                </div>
+                <div class="li-container s2">
+                    <span><a href="{% url 'post_list' %}">blog</a></span>
+                </div>
+            </li>
+
+            <li class="title">
+                <div class="li-container s1">
+                    <span><a>cv</a></span>
+                </div>
+                <div class="li-container s2">
+                    <span><a href="">cv</a></span>
+                </div>
+            </li>
+        </ul>
+    </header>
+
+    <div class="welcome-container">
+        <br>
+        <p>bonjour, bienvenue sur</p>
+        <br>
+        <h1>karibou destroyer web agency</h1>
+        <br>
+        <p>je m'appelle guillaume, je suis developer front-end à votre service.</p>
+        <br>
+        <p>je peux réaliser tous vos projets, il vous suffit de me contacter via le formulaire ou par mail.</p>
+        <br>
+        <p>a bientot.</p>
+    </div>
+
+</section>
+
+{#<script  src="{% static 'script/index.js' %}">#}
+
+</script>
+</body>
+</html>
