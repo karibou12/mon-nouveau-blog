@@ -2,12 +2,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
   color: #ffffff;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -29,6 +30,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#ef9489), color-stop(76%, #ffcea6));
   background: linear-gradient(90deg, #ef9489 0%, #ffcea6 76%);
   opacity: 0.6;
   height: 100%;
@@ -37,13 +39,17 @@ body {
 
 header {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   top: 0;
   height: 80px;
   width: 100%;
   border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.38);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.38);
 }
+
 header h2 {
   width: 400px;
   line-height: 80px;
@@ -54,16 +60,24 @@ header h2 {
 
 ul {
   position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: 100px;
   list-style: none;
-  justify-content: space-around;
-  align-self: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .title {
   position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin-left: 50px;
   font-size: 1.2em;
@@ -72,18 +86,22 @@ ul {
 
 .title span {
   color: #ffffff;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   display: inline-block;
 }
 
 .s1 span {
-  transform-origin: bottom;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
   color: white;
 }
 
 .s2 span {
-  transform-origin: top;
-  transform: translateY(100%) rotateX(-90deg);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: translateY(100%) rotateX(-90deg);
+          transform: translateY(100%) rotateX(-90deg);
 }
 
 .s2 {
@@ -98,11 +116,13 @@ ul {
 }
 
 .title:hover .s1 span {
-  transform: translateY(-100%) rotateX(-90deg);
+  -webkit-transform: translateY(-100%) rotateX(-90deg);
+          transform: translateY(-100%) rotateX(-90deg);
 }
 
 .title:hover .s2 span {
-  transform: translateY(0%) rotateX(0deg);
+  -webkit-transform: translateY(0%) rotateX(0deg);
+          transform: translateY(0%) rotateX(0deg);
 }
 
 .s2 a:hover {
@@ -120,5 +140,4 @@ ul {
   border: solid 2px whitesmoke;
   background-color: rgba(0, 0, 0, 0.4);
 }
-
 /*# sourceMappingURL=index.css.map */
